@@ -5,6 +5,10 @@ class Tracked:
         self.mobile=mobile
         self.EnableTracking =False
         self.AllowedTrackers =[]
+        self.PauseTracking =False
+        self.CustomTag ={}
+        self.UpdateMyLocationInterval = 300
+
     def __repr__(self):
         return self.mobile
 
@@ -14,6 +18,17 @@ class Tracked:
     def Revoke(self,track):
         if track in self.AllowedTrackers:
             self.AllowedTrackers.remove(track)
+    def Pause(self):
+        self.PauseTracking =True
+class Fleet (Tracked):
+    pass
+
+class Child (Tracked):
+    pass
 
 
+class SchoolBus (Tracked):
+    pass
 
+class Employee (Tracked):
+    pass
